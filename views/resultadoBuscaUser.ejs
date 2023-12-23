@@ -1,0 +1,19 @@
+<%- include("topoAdmin") %>
+<table><tr><th>Id</th><th>Login</th><th>Nome</th><th>Alterar</th><th>Excluir</th></tr>
+    <%
+    for (var i = 0; i < usuarios.length; i++) {
+    %>
+        <tr>
+        <td><%= usuarios[i].id %></td>
+        <td><%= usuarios[i].login %></td>
+        <td><%= usuarios[i].nome %></td>
+        <td> <a href='/alteraUser?id=<%=usuarios[i].id %>'>Alterar</a></td>
+
+        <td><a href='/excluiUser?id=<%=usuarios[i].id %>' onclick="return confirm('Deseja realmente excluir este usuario?')">Excluir</a></td>
+    </tr>
+      <%
+        }
+      %>
+</table>
+
+<%- include("rodape") %>
